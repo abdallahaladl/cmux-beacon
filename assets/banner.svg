@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" fill="none" role="img" aria-label="cmux-beacon — live progress for OpenCode sessions in the cmux sidebar">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#070a12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(320 30) rotate(38) scale(640 440)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0ea5e9" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stripe" x1="0" y1="52" x2="0" y2="268" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="836" y1="0" x2="1184" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+    <clipPath id="cardClip">
+      <rect x="800" y="52" width="420" height="216" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1280" height="320" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="320" rx="24" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="1279" height="319" rx="23.5" stroke="#1e293b"/>
+
+  <g font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <text x="80" y="152" fill="#f8fafc" font-size="62" font-weight="700" letter-spacing="-1.5">cmux-beacon</text>
+    <text x="82" y="198" fill="#94a3b8" font-size="21">Live progress for OpenCode sessions in the cmux sidebar</text>
+
+    <g font-size="13" fill="#64748b">
+      <circle cx="82" cy="248" r="5" fill="#0ea5e9"/><text x="96" y="253">Working</text>
+      <circle cx="200" cy="248" r="5" fill="#6366f1"/><text x="214" y="253">Thinking</text>
+      <circle cx="318" cy="248" r="5" fill="#ff9500"/><text x="332" y="253">Input</text>
+      <circle cx="424" cy="248" r="5" fill="#12b3a6"/><text x="438" y="253">Done</text>
+      <circle cx="524" cy="248" r="5" fill="#ff3b30"/><text x="538" y="253">Error</text>
+      <circle cx="624" cy="248" r="5" fill="#8e8e93"/><text x="638" y="253">Paused</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="800" y="52" width="420" height="216" rx="16" fill="#0e1526" stroke="#1e293b"/>
+    <g clip-path="url(#cardClip)">
+      <rect x="800" y="52" width="7" height="216" fill="url(#stripe)"/>
+    </g>
+
+    <g font-family="ui-sans-serif, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+      <text x="836" y="96" fill="#64748b" font-size="12" letter-spacing="3">OPENCODE</text>
+
+      <rect x="836" y="112" width="238" height="36" rx="18" fill="#0ea5e9" fill-opacity="0.12" stroke="#0ea5e9" stroke-opacity="0.35"/>
+      <circle cx="858" cy="130" r="5" fill="#0ea5e9"/>
+      <text x="874" y="135" fill="#e2e8f0" font-size="15">Editing app.tsx</text>
+
+      <rect x="836" y="178" width="348" height="10" rx="5" fill="#1b2438"/>
+      <rect x="836" y="178" width="115" height="10" rx="5" fill="url(#bar)"/>
+
+      <text x="836" y="216" fill="#94a3b8" font-size="13">Build hero + nav</text>
+      <text x="1184" y="216" fill="#cbd5e1" font-size="13" text-anchor="end">33%</text>
+    </g>
+  </g>
+</svg>
