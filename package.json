@@ -1,0 +1,38 @@
+{
+  "name": "cmux-beacon",
+  "version": "1.0.0",
+  "description": "Live progress, status and color for OpenCode sessions in the cmux sidebar.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Abdallah Aladl",
+  "homepage": "https://github.com/abdallahaladl/cmux-beacon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abdallahaladl/cmux-beacon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abdallahaladl/cmux-beacon/issues"
+  },
+  "keywords": [
+    "cmux",
+    "opencode",
+    "plugin",
+    "progress",
+    "status",
+    "sidebar",
+    "agent",
+    "macos"
+  ],
+  "files": [
+    "src",
+    "docs",
+    "assets"
+  ],
+  "scripts": {
+    "test": "node test/harness.mjs",
+    "test:live": "node test/live-test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
