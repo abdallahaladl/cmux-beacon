@@ -8,6 +8,7 @@
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -61,6 +62,18 @@ async function newPlugin(overrides = {}) {
     if (v === undefined) delete process.env[k];
     else process.env[k] = v;
   }
+  // Warm the fake binary synchronously. Right after a fresh clone the first
+  // detached spawn can be delayed by cold exec/filesystem caches; warming it
+  // keeps the per-step timing deterministic.
+  fs.writeFileSync(CAPTURE, "");
+  try {
+    execFileSync(FAKE_BIN, ["warmup"], {
+      env: { ...process.env, CAPTURE_LOG: CAPTURE },
+      stdio: "ignore",
+    });
+  } catch (_) {}
+  await sleep(50);
+  fs.writeFileSync(CAPTURE, "");
   delete globalThis[INSTALLED_KEY];
   const mod = await import(`${PLUGIN_COPY}?v=${Date.now()}-${Math.random()}`);
   const hooks = await mod.CmuxBeacon();
